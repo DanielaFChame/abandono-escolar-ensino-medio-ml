@@ -1,18 +1,23 @@
-# TITULO DO PROJETO
+# Análise de fatores institucionais e estruturais associados à vulnerabilidade educacional na educação básica brasileira: um estudo com microdados do Censo Escolar 2025
 
 
 **Nome completo do Aluno 1, email do aluno 1**
 
-**Nome completo do Aluno 2, email do aluno 2**
+**Daniela Ferreira Chame, daniela.chame@sga.pucminas.br**
 
 **Nome completo do Aluno 3, email do aluno 3**
+
+**Nome completo do Aluno 4, email do aluno 4**
+
+**Nome completo do Aluno 5, email do aluno 5**
+
 
 ---
 
 Professores:
 
-** Prof. Nome do Prof 1 **
-** Prof. Nome do Prof 2 **
+** Prof. Gabriel Barbosa da Fonseca **
+** Prof. Marco Paulo Soares Gomes **
 
 ---
 
@@ -34,9 +39,9 @@ A introdução deve apresentar de dois a quatro parágrafos de contextualizaçã
 
 ###    Contextualização
 
-Na **contextualização**, o aluno deve dizer do que se trata o trabalho, em que área ou contexto se insere. 
-A **contextualização** deve ser desenvolvida de algo mais genérico para algo mais específico. 
-A citação de pesquisas quantitativas é bem aceita aqui (corretamente referenciadas).
+A evasão escolar deve ser compreendida como parte de um processo mais amplo de exclusão educacional, que pode se iniciar com a infrequência e evoluir para o abandono e, posteriormente, para a evasão definitiva. De acordo com o Observatório de Educação do Instituto Unibanco, o abandono escolar ocorre quando o estudante deixa de frequentar a escola ao longo do ano letivo, enquanto a evasão se caracteriza pela não continuidade dos estudos no período subsequente.
+A identificação de fatores associados ao abandono escolar pode contribuir para a compreensão e prevenção da evasão. Embora estudos apontem a forte influência de fatores socioeconômicos, também há evidências de que aspectos institucionais (como infraestrutura escolar, número de docentes, organização das turmas e oferta de ensino em tempo integral) desempenham papel importante na permanência dos estudantes na escola. Dessa forma, a análise desses fatores permite compreender como o ambiente escolar pode contribuir para contextos de maior ou menor vulnerabilidade educacional. 
+
 
 ###    Problema
 
