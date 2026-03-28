@@ -5,7 +5,7 @@
 
 **Daniela Ferreira Chame, daniela.chame@sga.pucminas.br**
 
-**Nome completo do Aluno 3, email do aluno 3**
+**Giovanna Brito Silva Ribeiro, gbsribeiro@sga.pucminas.br**
 
 **Nome completo do Aluno 4, email do aluno 4**
 
@@ -80,12 +80,8 @@ no seu trabalho.
 
 ###    Justificativas
 
-Mostre também as **justificativas** para o  desenvolvimento do seu trabalho e, caso deseje, 
-destaque alguma contribuição do trabalho.
-
-A justific ativa deve descrever a importância ou a motivação para o desenvolvimento do 
-sistema inteligente escolhido. Indique as razões pelas quais você escolheu seus objetivos 
-específicos ou as razões para aprofundar em certos aspectos do software.
+Este trabalho surge da necessidade de analisar a evasão escolar a partir de uma perspectiva institucional, investigando como características das escolas podem estar associadas a contextos de riscos, mesmo na ausência de variáveis socioeconômicas individuais, visto que o afastamento escolar representa um dos principais desafios do sistema educacional e retrata desigualdades socieconômicas. Essa abordagem é particularmente relevante considerando que os microdados do Censo Escolar disponíveis são agregados por estabelecimento de ensino, o que exige a construção de indicadores indiretos para análise do fenômeno.
+Além disso, a utilização de técnicas de Ciência de Dados aplicadas à bases educacionais em larga escala permite a integração de múltiplas dimensões do sistema educacional, contribuindo para a identificação de padrões e para a geração de evidências que podem auxiliar na formulação de políticas públicas e estratégias educacionais mais eficazes.
 
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
@@ -94,14 +90,13 @@ específicos ou as razões para aprofundar em certos aspectos do software.
 
 ##    Público alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. 
-O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários 
-na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos 
-usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O público alvo deste trabalho é composto por:
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, 
-diagramas de personas e mapa de stakeholders.
+- Gestores educacionais, interessados em compreender como características institucionais impactam a permanência escolar;
+- Pesquisadores das áreas de educação;
+- Formuladores de políticas públicas: Ministério de educação, Secretarias Estaduais de Educação, etc;
+- Estudantes em risco de evasão,principalmente em contextos de vulnerabilidade.
+
 
 > **Links Úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
