@@ -27,7 +27,8 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Mi
 
 ---
 
-_**Síntese**. Este trabalho analisa a relação entre fatores institucionais e estruturais das escolas e o risco de evasão escolar na educação básica brasileira, utilizando os microdados do Censo Escolar 2025. Considerando a ausência de variáveis socioeconômicas individuais, a pesquisa concentra-se em características internas das instituições de ensino, como infraestrutura, organização pedagógica e recursos humanos. A partir da integração de diferentes bases de dados, são construídos indicadores que permitem identificar padrões associados a contextos de maior vulnerabilidade educacional. Espera-se que os resultados contribuam para a compreensão do papel das condições escolares na permanência dos estudantes.
+**Síntese**. 
+Este trabalho analisa a relação entre fatores institucionais e estruturais das escolas e o risco de evasão escolar na educação básica brasileira, utilizando os microdados do Censo Escolar 2025. Considerando a ausência de variáveis socioeconômicas individuais, a pesquisa concentra-se em características internas das instituições de ensino, como infraestrutura, organização pedagógica e recursos humanos. A partir da integração de diferentes bases de dados, são construídos indicadores que permitem identificar padrões associados a contextos de maior vulnerabilidade educacional. Espera-se que os resultados contribuam para a compreensão do papel das condições escolares na permanência dos estudantes.
 ---
 
 
