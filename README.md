@@ -17,10 +17,6 @@
 * Marco Paulo Soares Gomes
 
 
-## Instruções de utilização
-
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
-
 ## Síntese
 
 Este trabalho analisa a relação entre fatores institucionais e estruturais das escolas e o risco de evasão escolar na educação básica brasileira, utilizando os microdados do Censo Escolar 2025. Considerando a ausência de variáveis socioeconômicas individuais, a pesquisa concentra-se em características internas das instituições de ensino, como infraestrutura, organização pedagógica e recursos humanos. A partir da integração de diferentes bases de dados, são construídos indicadores que permitem identificar padrões associados a contextos de maior vulnerabilidade educacional. Espera-se que os resultados contribuam para a compreensão do papel das condições escolares na permanência dos estudantes.
@@ -38,6 +34,18 @@ A evasão escolar é um problema multifatorial, cuja análise frequentemente se 
 Apesar da disponibilidade de microdados educacionais detalhados, muitas análises não exploram de maneira integrada as características das instituições de ensino, como infraestrutura, organização pedagógica e distribuição dos recursos humanos. Além disso, os dados disponíveis dificultam a análise direta da evasão, exigindo a construção de indicadores indiretos. 
 
 Diante deste cenário, torna-se necessário investigar como fatores institucionais e estruturais das escolas estão associados a contextos de maior risco de evasão escolar, mesmo na ausência de variáveis socioeconômicas individuais
+
+## Objetivo geral
+
+Analisar, com base nos microdados do Censo Escolar 2025, como fatores institucionais e estruturais das escolas estão associados a contextos de maior risco de evasão escolar na educação básica.
+
+### Objetivos específicos
+
+* Construir indicadores institucionais e estruturais das escolas, incluindo razão aluno/docente, tamanho médio das turmas e oferta de ensino em tempo integral.
+* Desenvolver um índice de vulnerabilidade educacional baseado em características institucionais, como rede de ensino, localização, disponibilidade de recursos humanos e organização pedagógica.
+* Analisar a distribuição do índice de vulnerabilidade entre as escolas, identificando padrões associados a diferentes contextos institucionais (público/privado, urbano/rural).
+* Investigar a relação entre os indicadores estruturais das escolas e níveis mais elevados de vulnerabilidade educacional.
+
 
 
 ## Histórico de versões
