@@ -47,15 +47,18 @@ A identificação de fatores associados ao abandono escolar pode contribuir para
 
 ###    Problema
 
-Nesse momento você deve apresentar o problema que seu agente pretende resolver. 
-No entanto, não é a hora de comentar sobre a aplicação.
-Descreva também o contexto em que essa aplicação será usada, se  houver: 
-empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, 
-pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o aluno deve 
-sucintamente apresentar o cenário de problema da empresa. A empresa só deve ser citada 
-explicitamente se o aluno tiver autorização para tal.
+A evasão escolar é um problema multifatorial, cuja análise frequentemente se concentra em
+fatores socioeconômicos. No entanto, essa abordagem pode limitar a compreensão do papel
+das condições institucionais e estruturais das escolas no processo de permanência dos
+estudantes.
+Apesar da disponibilidade de microdados educacionais detalhados, muitas análises não
+exploram de maneira integrada as características das instituições de ensino, como
+infraestrutura, organização pedagógica e distribuição dos recursos humanos. Além disso, os
+dados disponíveis dificultam a análise direta da evasão, exigindo a construção de indicadores
+indiretos.
+Diante deste cenário, torna-se necessário investigar como fatores institucionais e estruturais
+das escolas estão associados a contextos de maior risco de evasão escolar, mesmo na
+ausência de variáveis socioeconômicas individuais.
 
 
 
