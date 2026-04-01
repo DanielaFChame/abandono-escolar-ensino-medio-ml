@@ -7,9 +7,9 @@
 
 **Giovanna Brito Silva Ribeiro, gbsribeiro@sga.pucminas.br**
 
-**Nome completo do Aluno 4, email do aluno 4**
+**Isabella Oliveira Araujo Barbosa Moreira, isabella.moreira@sga.pucminas.br**
 
-**Lívia Hilbert de Oliveira livia.hilbert@sga.pucminas.br**
+**Lívia Hilbert de Oliveira, livia.hilbert@sga.pucminas.br**
 
 
 ---
@@ -57,8 +57,6 @@ O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o al
 sucintamente apresentar o cenário de problema da empresa. A empresa só deve ser citada 
 explicitamente se o aluno tiver autorização para tal.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
 
 
 ### Objetivo geral
@@ -79,8 +77,6 @@ Analisar, com base nos microdados do Censo Escolar 2025, como fatores institucio
 Este trabalho surge da necessidade de analisar a evasão escolar a partir de uma perspectiva institucional, investigando como características das escolas podem estar associadas a contextos de riscos, mesmo na ausência de variáveis socioeconômicas individuais, visto que o afastamento escolar representa um dos principais desafios do sistema educacional e retrata desigualdades socieconômicas. Essa abordagem é particularmente relevante considerando que os microdados do Censo Escolar disponíveis são agregados por estabelecimento de ensino, o que exige a construção de indicadores indiretos para análise do fenômeno.
 Além disso, a utilização de técnicas de Ciência de Dados aplicadas à bases educacionais em larga escala permite a integração de múltiplas dimensões do sistema educacional, contribuindo para a identificação de padrões e para a geração de evidências que podem auxiliar na formulação de políticas públicas e estratégias educacionais mais eficazes.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 
 
@@ -93,12 +89,6 @@ O público alvo deste trabalho é composto por:
 - Formuladores de políticas públicas: Ministério de educação, Secretarias Estaduais de Educação, etc;
 - Estudantes em risco de evasão,principalmente em contextos de vulnerabilidade.
 
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
 
 
 ## Análise exploratórida dos dados
