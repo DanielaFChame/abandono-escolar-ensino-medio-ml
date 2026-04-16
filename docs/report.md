@@ -1,5 +1,5 @@
 # Análise de fatores institucionais e estruturais associados à vulnerabilidade educacional na educação básica brasileira: um estudo com microdados do Censo Escolar 2025
-
+teste
 
 **Gabriela Gomes Mattoso, gabriela.mattoso@sga.pucminas.br**
 
