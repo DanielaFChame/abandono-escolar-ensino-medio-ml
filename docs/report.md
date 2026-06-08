@@ -123,7 +123,49 @@ A preparação dos dados consiste dos seguintes passos:
 > - Conversão de dados: p. ex. numérico para categórico, categórico para binário, etc.
 
 
-## Indução de modelos
+## Indução de Modelos
+
+### Estratégia Metodológica
+A análise adota dois modelos supervisionados com objetivos complementares, em vez de recorrer a um único modelo genérico. Essa abordagem permite extrair o melhor de cada técnica:
+
+| Modelo | Papel | Vantagem Principal | Limitação |
+| :--- | :--- | :--- | :--- |
+| **Árvore de Decisão** | **Descritivo:** Explica *QUAIS* fatores estão associados ao abandono. | Regras interpretáveis diretamente por gestores e formuladores de políticas. | Menor acurácia preditiva. |
+| **Random Forest** | **Preditivo:** Classifica escolas em níveis de risco. | Alta acurácia, robusto a *outliers* e fornece a importância das variáveis (*feature importance*). | Natureza de "caixa preta", sem gerar regras explícitas. |
+
+---
+
+### Sistema de Alerta em Cascata
+Ambos os modelos operam integrados a um sistema estruturado em cascata, composto por duas etapas sequenciais:
+
+| Etapa | Pergunta Central | Saída / Encaminhamento |
+| :---: | :--- | :--- |
+| **Etapa 1** | Esta escola tem abandono? (taxa > 0% *vs.* 0%) | `Com_abandono` → Avança para a Etapa 2<br>`Sem_abandono` → Classificação final: *Sem abandono* |
+| **Etapa 2** | O abandono é alto? (taxa > 5% *vs.* ≤ 5%) | Classificação final: `Alto_risco` ou `Risco_moderado` |
+
+> **Convergência Metodológica:** Quando os dois modelos convergem e apontam as mesmas variáveis como as mais importantes, a evidência de associação entre aquele fator institucional e o abandono escolar se torna consideravelmente mais robusta, uma vez que dois algoritmos com lógicas de aprendizado distintas chegaram à mesma conclusão de forma independente.
+
+---
+
+### Divisão de Treino e Teste
+A mesma estratégia de separação de dados foi aplicada para ambos os modelos, garantindo comparabilidade:
+
+* **Divisão Global (Etapa 1):**
+  * **80% Treino:** 14.543 escolas.
+  * **20% Teste:** 3.636 escolas.
+  * *Estratégia:* Divisão estratificada (`stratify=y`), o que garante a preservação da proporção exata entre as classes tanto no treino quanto no teste.
+
+* **Divisão Específica (Etapa 2 — Apenas escolas com abandono > 0%):**
+  * **Base Total:** 13.150 escolas públicas.
+  * **80% Treino:** 10.520 escolas.
+  * **20% Teste:** 2.630 escolas.
+
+---
+
+### Validação Cruzada
+* **Método:** Validação cruzada estratificada com 5 partições (5-*fold* estratificado).
+* **Aplicação:** Aplicada exclusivamente sobre o conjunto de treino.
+* **Dinâmica:** A cada iteração, o sistema utiliza aproximadamente 80% do conjunto de treino para o ajuste do modelo e reserva os 20% restantes para validação interna, repetindo o processo 5 vezes.
 
 ## Modelo 1: Árvore de Decisão (Descritivo)
 
