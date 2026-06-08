@@ -179,9 +179,54 @@ o *feature importances* para tentar entender quais atributos o modelo se baseia 
 processo de tomada de decisão.
 
 
-### Resultados obtidos com o modelo 2.
+## Modelo 2: Random Forest (Preditivo)
 
-Repita o passo anterior com os resultados do modelo 2.
+### Justificativa
+O **Random Forest** foi escolhido como modelo preditivo por combinar alta acurácia com robustez a *outliers*. O *ensemble* de 500 árvores treinadas com *bagging* e seleção aleatória de *features* reduz a variância do modelo, superando consistentemente a árvore de decisão única em métricas de classificação. 
+
+Além disso, o modelo fornece a importância das variáveis (*feature importance*), calculada com base na redução de impureza (Gini), permitindo uma comparação direta com as regras da Árvore de Decisão descritiva.
+
+### Otimização de Hiperparâmetros
+Os hiperparâmetros do Random Forest foram otimizados por meio do `RandomizedSearchCV`, executando 40 iterações com validação cruzada estratificada de 5 *folds*. Esse procedimento testa combinações aleatórias dentro de um espaço de busca previamente definido.
+
+O espaço de busca foi estruturado de forma controlada para reduzir o risco de *overfitting* e manter o custo computacional viável. Como o objetivo principal era construir um sistema de alerta interpretável e operacional (e não apenas maximizar o desempenho a qualquer custo), optou-se por testar valores moderados para o número e a profundidade das árvores.
+
+| Hiperparâmetro | Valores Testados | Melhor Valor (Etapa 1 / Etapa 2) |
+| :--- | :--- | :--- |
+| `n_estimators` | `300`, `500` | `500` / `500` |
+| `max_depth` | `None`, `20` | `20` / `20` |
+| `min_samples_leaf` | `3`, `5` | `5` / `5` |
+| `max_features` | `'sqrt'`, `'log2'` | `'sqrt'` / `'log2'` |
+| `class_weight` | `'balanced'`, `'balanced_subsample'` | `'balanced_subsample'` / `'balanced'` |
+| `max_samples` | `0.6`, `0.8`, `None` | `0.8` / `None` |
+
+---
+
+### Calibração dos Limiares de Decisão (*Thresholds*)
+A calibração dos *thresholds* é uma das decisões metodológicas mais críticas de um sistema de alerta. Por padrão, a biblioteca Scikit-Learn adota um *threshold* de `0.50` (classificando como positivo quando a probabilidade é > 50%). Para um diagnóstico educacional, assumir esse padrão é subótimo.
+
+#### Etapa 1 — Threshold = 0.35
+O limiar da Etapa 1 controla a sensibilidade do sistema para detectar qualquer sinal de abandono. Durante os testes, um limiar de `0.25` (mais agressivo) atingiu um *recall* de 0.98, mas classificou 98% de todas as escolas como `Com_abandono`, tornando o filtro inútil. Por outro lado, `0.50` perderia muitas escolas com abandono real. 
+
+**O valor de 0.35 foi escolhido por:**
+* Manter um *recall* alto para a classe `Com_abandono` (0.95) — apenas 5% das escolas com abandono real escapam para o grupo `Sem_abandono`.
+* Melhorar a especificidade em relação ao *threshold* de `0.25`, sinalizando incorretamente menos escolas sem abandono real.
+* Refletir o princípio metodológico central do sistema: o custo de um falso negativo (não identificar uma escola em risco) é significativamente maior que o custo de um falso positivo (investigar uma escola desnecessariamente).
+
+#### Etapa 2 — Threshold = 0.50 (Determinado automaticamente)
+O limiar da Etapa 2 foi estabelecido por meio de busca automática, avaliando valores entre `0.30` e `0.60` para selecionar aquele que maximiza o *F1-score* específico da classe `Alto_risco`:
+
+| Threshold | F1 (Alto Risco) | Recall (Alto Risco) | Precisão (Alto Risco) | Erros Críticos |
+| :---: | :---: | :---: | :---: | :---: |
+| 0.30 | 0.518 | 0.974 | 0.353 | 24 |
+| 0.35 | 0.567 | 0.951 | 0.404 | 46 |
+| 0.40 | 0.620 | 0.906 | 0.471 | 88 |
+| 0.45 | 0.660 | 0.842 | 0.543 | 148 |
+| **0.50** | **0.680** | **0.745** | **0.624** | **239** |
+| 0.55 | 0.651 | 0.617 | 0.688 | 360 |
+| 0.60 | 0.591 | 0.485 | 0.756 | 484 |
+
+> **Justificativa da Seleção Automática:** > O *threshold* `0.50` foi selecionado por atingir o pico de F1-score para a classe de Alto risco (`0.680`). Quando comparado a um limiar mais agressivo como `0.30` (que minimiza os erros críticos para apenas 24), o valor de `0.50` agrupa escolas com uma taxa de abandono média real de 6,99% (uma margem segura acima do limiar crítico de 5%). Em contraste, o *threshold* de `0.30` resultava em uma taxa média de apenas 4,29%, indicando que o grupo de Alto Risco estava sendo inflado com escolas *borderline*. Portanto, o limiar ótimo de `0.50` representa o equilíbrio ideal entre a precisão do alerta e a real capacidade de detectar escolas criticamente vulneráveis.
 
 ### Interpretação do modelo 2
 
