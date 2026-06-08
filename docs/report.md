@@ -157,27 +157,6 @@ Os *thresholds* da Árvore de Decisão foram ajustados manualmente e fixados nos
 **Justificativa da Calibração:**
 O ajuste foi feito com o objetivo de **aumentar a sensibilidade** do sistema na identificação de escolas com risco de abandono, reduzindo ao máximo os falsos negativos. Essa escolha reflete a lógica central de um sistema de alerta precoce: deixar de identificar uma escola em risco grave (falso negativo) tem um custo social muito maior do que sinalizar preventivamente uma escola que, no futuro, não se confirme como prioritária (falso positivo).
 
-### Modelo 2: Algoritmo
-
-Repita os passos anteriores para o segundo modelo.
-
-
-## Resultados
-
-### Resultados obtidos com o modelo 1.
-
-Apresente aqui os resultados obtidos com a indução do modelo 1. 
-Apresente uma matriz de confusão quando pertinente. Apresente as medidas de performance
-apropriadas para o seu problema. 
-Por exemplo, no caso de classificação: precisão, revocação, F-measure, acurácia.
-
-### Interpretação do modelo 1
-
-Apresente os parâmetros do modelo obtido. Tentre mostrar as regras que são utilizadas no
-processo de 'raciocínio' (*reasoning*) do sistema inteligente. Utilize medidas como 
-o *feature importances* para tentar entender quais atributos o modelo se baseia no
-processo de tomada de decisão.
-
 
 ## Modelo 2: Random Forest (Preditivo)
 
@@ -228,9 +207,60 @@ O limiar da Etapa 2 foi estabelecido por meio de busca automática, avaliando va
 
 > **Justificativa da Seleção Automática:** > O *threshold* `0.50` foi selecionado por atingir o pico de F1-score para a classe de Alto risco (`0.680`). Quando comparado a um limiar mais agressivo como `0.30` (que minimiza os erros críticos para apenas 24), o valor de `0.50` agrupa escolas com uma taxa de abandono média real de 6,99% (uma margem segura acima do limiar crítico de 5%). Em contraste, o *threshold* de `0.30` resultava em uma taxa média de apenas 4,29%, indicando que o grupo de Alto Risco estava sendo inflado com escolas *borderline*. Portanto, o limiar ótimo de `0.50` representa o equilíbrio ideal entre a precisão do alerta e a real capacidade de detectar escolas criticamente vulneráveis.
 
-### Interpretação do modelo 2
+## Resultados
 
-Repita o passo anterior com os parâmetros do modelo 2.
+### Desempenho dos Modelos
+
+| Modelo | F1-macro CV (Etapa 1) | F1-macro CV (Etapa 2) | Erros Críticos | Vantagem Principal |
+| :--- | :--- | :--- | :--- | :--- |
+| Árvore de Decisão | 0.598 ± 0.009 | 0.626 ± 0.013 | 366 | Regras interpretáveis |
+| Random Forest | 0.653 ± 0.006 | 0.659 ± 0.012 | 304 | Maior acurácia preditiva |
+
+> **Nota sobre Erros Críticos:** Refere-se ao número de escolas com alto risco real que foram classificadas incorretamente pelo sistema de alerta como *Sem abandono* ou *Risco moderado*. O Random Forest apresenta superioridade em todas as métricas quantitativas, resultando em **17% menos erros críticos** em comparação com a Árvore de Decisão.
+
+---
+
+### Resultado Final (Random Forest)
+
+| Nível de Alerta | Escolas | % do Total | Taxa Média Real | Mediana Real |
+| :--- | :---: | :---: | :---: | :---: |
+| Alto Risco (> 5%) | 1.121 | 30,9% | 6,99% | 6,1% |
+| Risco Moderado (até 5%) | 2.186 | 60,2% | 2,17% | 1,4% |
+| Sem Abandono (0%) | 329 | 9,1% | ~0%* | 0,0% |
+
+> **\*** A média do grupo *Sem abandono* (2,94%) é levemente superior ao *Risco moderado* (2,17%) devido a um pequeno número de escolas com abandono real que escapam para esse grupo (resultado do *threshold* conservador definido na Etapa 1). No entanto, a mediana de **0,0%** confirma que a vasta maioria das escolas desse grupo genuinamente não tem abandono. A lógica geral do sistema é validada de forma robusta pela progressão da mediana: **Sem abandono (0,0%) < Risco moderado (1,4%) < Alto risco (6,1%)**.
+
+*Figura 13: Matrizes de confusão do sistema de alerta. À esquerda: Árvore de Decisão. À direita: Random Forest. O RF acerta 700 de 1.004 escolas de alto risco real (69,7%), com apenas 65 escapando para "Sem abandono" — o erro mais grave que o sistema pode cometer. A Árvore acerta 638 (63,5%), mas comete 117 erros graves (Alto risco → Sem abandono).*
+
+---
+
+### Fatores Institucionais Identificados
+
+#### Árvore de Decisão — Regras Interpretáveis
+As principais regras geradas pela Árvore de Decisão para a Etapa 2 (classificação de *Alto risco* vs. *Risco moderado*) são:
+
+| # | Condição Institucional | Classificação |
+| :---: | :--- | :--- |
+| 1 | Sem grêmio e matrículas noturnas > 12% | **ALTO RISCO** (incondicional) |
+| 2 | Sem grêmio e noturno ≤ 12% e carência pedagógica > 5,5 | **ALTO RISCO** |
+| 3 | Sem grêmio e noturno ≤ 12% e carência ≤ 5,5 e profissionais de apoio (log) > 1,24 | **RISCO MODERADO** |
+| 4 | Com grêmio e matrículas noturnas ≤ 15% | **RISCO MODERADO** (incondicional) |
+| 5 | Com grêmio e noturno > 15% e sem assoc. de pais e mestres | **ALTO RISCO** |
+| 6 | Com grêmio e noturno > 15% e com assoc. de pais e mestres e com quadra coberta | **RISCO MODERADO** |
+| 7 | Com grêmio e noturno > 15% e com assoc. de pais e mestres e sem quadra coberta | **ALTO RISCO** |
+
+#### Random Forest — Importância das Variáveis
+
+*Figura 16 — Top 15 features por importância Gini — Random Forest Etapa 2. A proporção de matrículas no noturno e o total de matrículas dominam, seguidos por razões aluno/profissional, presença de grêmio e associação de pais e mestres.*
+
+As **Top 5 variáveis** identificadas pelo Random Forest são:
+1. Proporção de matrículas no noturno
+2. Total de matrículas (log)
+3. Alunos por profissional de apoio
+4. Alunos por gestão/coordenação
+5. Profissionais de apoio (log)
+
+> **Convergência entre os modelos:** A presença de grêmio estudantil e a associação de pais e mestres aparecem na 6ª e 7ª posição do Random Forest, respectivamente. Esse dado confirma a convergência com as regras geradas de forma independente pela Árvore de Decisão, reforçando a validade dos fatores institucionais identificados.
 
 
 ## Análise comparativa dos modelos
