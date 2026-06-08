@@ -125,14 +125,37 @@ A preparação dos dados consiste dos seguintes passos:
 
 ## Indução de modelos
 
-### Modelo 1: Algoritmo
+## Modelo 1: Árvore de Decisão (Descritivo)
 
-Substitua o título pelo nome do algoritmo que será utilizado. P. ex. árvore de decisão, rede neural, SVM, etc.
-Justifique a escolha do modelo.
-Apresente o processo utilizado para amostragem de dados (particionamento, cross-validation).
-Descreva os parâmetros utilizados. 
-Apresente trechos do código utilizado comentados. Se utilizou alguma ferramenta gráfica, apresente imagens
-com o fluxo de processamento.
+### Justificativa
+A **Árvore de Decisão** foi escolhida como modelo descritivo por gerar regras explícitas e interpretáveis sem necessidade de intermediação técnica. 
+
+> **Exemplo prático:** Um gestor educacional pode ler diretamente uma regra como: *"Escolas sem grêmio estudantil com mais de 12% de matrículas noturnas têm alto risco de abandono"*. 
+
+Essa característica é essencial para o objetivo descritivo do trabalho e para a comunicação direta com o público-alvo (gestores e formuladores de políticas públicas). Além disso, o pré-processamento preserva os valores na escala original, mantendo o sentido real nas regras geradas pela árvore.
+
+### Hiperparâmetros
+Os parâmetros foram definidos para garantir a explicabilidade e evitar o *overfitting* (sobreajuste) do modelo:
+
+* **`max_depth` (Profundidade Máxima):** `5` (Etapa 1) / `4` (Etapa 2).
+  * *Motivo:* Manter árvores rasas para evitar que o modelo memorize os dados de treino, além de preservar a interpretabilidade das regras.
+* **`min_samples_leaf` (Amostras Mínimas por Folha):** `50` (Etapa 1) / `100` (Etapa 2).
+  * *Motivo:* Garantir que as folhas finais tenham volume suficiente de amostras assegura que as regras descrevam padrões reais e estruturais, e não ruídos estatísticos.
+* **`class_weight='balanced'`:** * *Motivo:* Compensa o desbalanceamento intrínseco entre as classes de forma automática, sem a necessidade de reamostrar os dados previamente.
+
+### Estratégia de Validação Cruzada
+Foi utilizada a validação cruzada estratificada com 5 partições (`StratifiedKFold`, `n_splits=5`).
+
+Esse método preserva a proporção exata entre classes em cada *fold*. O uso de 5 *folds* é o padrão metodológico recomendado para bases com mais de 10.000 amostras, pois entrega estimativas de desempenho robustas e confiáveis sem gerar um custo computacional excessivo.
+
+### Calibração dos Limiares de Decisão (*Thresholds*)
+Os *thresholds* da Árvore de Decisão foram ajustados manualmente e fixados nos seguintes valores:
+
+* **Etapa 1:** `0.35`
+* **Etapa 2:** `0.45`
+
+**Justificativa da Calibração:**
+O ajuste foi feito com o objetivo de **aumentar a sensibilidade** do sistema na identificação de escolas com risco de abandono, reduzindo ao máximo os falsos negativos. Essa escolha reflete a lógica central de um sistema de alerta precoce: deixar de identificar uma escola em risco grave (falso negativo) tem um custo social muito maior do que sinalizar preventivamente uma escola que, no futuro, não se confirme como prioritária (falso positivo).
 
 ### Modelo 2: Algoritmo
 
