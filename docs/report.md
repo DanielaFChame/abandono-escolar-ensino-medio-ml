@@ -1,4 +1,4 @@
-# Análise de fatores institucionais e estruturais associados à vulnerabilidade educacional na educação básica brasileira: um estudo com microdados do Censo Escolar 2025
+# Análise de fatores institucionais e estruturais associados ao abandono escolar no Ensino Médio brasileiro: um estudo com dados do Censo Escolar 2025 e das Taxas de Rendimento Escolar 2024
 teste
 
 **Gabriela Gomes Mattoso, gabriela.mattoso@sga.pucminas.br**
