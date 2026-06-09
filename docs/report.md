@@ -272,6 +272,7 @@ O limiar da Etapa 2 foi estabelecido por meio de busca automática, avaliando va
 
 > **\*** A média do grupo *Sem abandono* (2,94%) é levemente superior ao *Risco moderado* (2,17%) devido a um pequeno número de escolas com abandono real que escapam para esse grupo (resultado do *threshold* conservador definido na Etapa 1). No entanto, a mediana de **0,0%** confirma que a vasta maioria das escolas desse grupo genuinamente não tem abandono. A lógica geral do sistema é validada de forma robusta pela progressão da mediana: **Sem abandono (0,0%) < Risco moderado (1,4%) < Alto risco (6,1%)**.
 
+![Matrizes de confusão](imagens/Figura13.png)
 *Figura 13: Matrizes de confusão do sistema de alerta. À esquerda: Árvore de Decisão. À direita: Random Forest. O RF acerta 700 de 1.004 escolas de alto risco real (69,7%), com apenas 65 escapando para "Sem abandono" — o erro mais grave que o sistema pode cometer. A Árvore acerta 638 (63,5%), mas comete 117 erros graves (Alto risco → Sem abandono).*
 
 ---
@@ -293,7 +294,8 @@ As principais regras geradas pela Árvore de Decisão para a Etapa 2 (classifica
 
 #### Random Forest — Importância das Variáveis
 
-*Figura 16 — Top 15 features por importância Gini — Random Forest Etapa 2. A proporção de matrículas no noturno e o total de matrículas dominam, seguidos por razões aluno/profissional, presença de grêmio e associação de pais e mestres.*
+![Top 15 features](imagens/Figura14.png)
+*Figura 14 — Top 15 features por importância Gini — Random Forest Etapa 2. A proporção de matrículas no noturno e o total de matrículas dominam, seguidos por razões aluno/profissional, presença de grêmio e associação de pais e mestres.*
 
 As **Top 5 variáveis** identificadas pelo Random Forest são:
 1. Proporção de matrículas no noturno
