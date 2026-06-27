@@ -141,7 +141,7 @@ A integração com a base de matrículas e com as taxas de rendimento de 2024 re
 
 Antes da modelagem, foi analisada a distribuição do abandono por rede administrativa. Os dados indicam que as escolas privadas apresentam uma distribuição muito distinta das escolas públicas: 93% das escolas privadas possuem taxa de abandono igual a zero, contra aproximadamente 28% das escolas públicas.
 
-![Figura 1 — Taxa média de abandono e percentual de escolas com abandono zero por rede administrativa](images/figura1.png)
+![Figura 1 — Taxa média de abandono e percentual de escolas com abandono zero por rede administrativa](imagens/figura1.png)
 
 *Figura 1 — Taxa média de abandono e percentual de escolas com abandono zero por rede administrativa. 93% das escolas privadas apresentam uma taxa de abandono zero, por razões estruturalmente distintas das escolas públicas.*
 
@@ -154,7 +154,7 @@ Antes da modelagem, foi analisada a distribuição do abandono por rede administ
 
 A inclusão de escolas privadas poderia introduzir viés na modelagem, levando o algoritmo a associar a rede privada à ausência de abandono, em vez de identificar padrões institucionais relevantes entre as escolas públicas.
 
-![Figura 2 — Distribuição da taxa de abandono nas escolas públicas do Ensino Médio Regular](images/figura2.png)
+![Figura 2 — Distribuição da taxa de abandono nas escolas públicas do Ensino Médio Regular](imagens/figura2.png)
 
 *Figura 2 — Distribuição da taxa de abandono nas escolas públicas do Ensino Médio Regular. À esquerda: histograma com limiar de 5% (alto risco) marcado em vermelho. À direita: número de escolas por nível de abandono.*
 
@@ -168,7 +168,7 @@ Buscando identificar associações exploratórias entre indicadores de matrícul
 
 De modo geral, observa-se predominância de correlações fracas ou moderadas, indicando que os indicadores escolares analisados representam dimensões distintas da estrutura institucional. As variáveis de infraestrutura apresentam alguns agrupamentos positivos, sugerindo que determinados recursos — como biblioteca, laboratórios, computadores, internet, quadra esportiva e espaços de apoio — tendem a ocorrer de forma combinada em parte das escolas.
 
-![Figura 3 — Matriz de correlação entre indicadores escolares](images/figura3.png)
+![Figura 3 — Matriz de correlação entre indicadores escolares](imagens/figura3.png)
 
 *Figura 3 — Matriz de correlação entre indicadores escolares. O heatmap apresenta as correlações entre variáveis de matrícula, infraestrutura, acessibilidade, recursos humanos e participação institucional das escolas de ensino médio regular. Tons vermelhos indicam correlação positiva, tons azuis indicam correlação negativa e tons próximos ao cinza indicam correlação próxima de zero.*
 
@@ -178,31 +178,31 @@ Para o caso das variáveis binárias (0 = ausência, 1 = presença), a média re
 
 Quanto à **infraestrutura básica** (Figura 4), recursos essenciais como água potável, energia elétrica, banheiro e internet apresentam alta cobertura entre as escolas analisadas. No entanto, outros elementos estruturais, como refeitório, alimentação escolar e esgotamento sanitário pela rede pública, podem apresentar percentuais menores, indicando que a disponibilidade de infraestrutura básica não é homogênea entre todos os aspectos avaliados.
 
-![Figura 4 — Presença de infraestrutura básica nas escolas de ensino médio regular](images/figura4.png)
+![Figura 4 — Presença de infraestrutura básica nas escolas de ensino médio regular](imagens/figura4.png)
 
 *Figura 4 — Presença de infraestrutura básica nas escolas de ensino médio regular. Percentual de escolas que possuem recursos básicos de funcionamento, como água potável, energia elétrica da rede pública, banheiro, cozinha, alimentação escolar, esgoto da rede pública e refeitório.*
 
 A **infraestrutura pedagógica** (Figura 5) possui alta presença de recursos tecnológicos básicos, como internet, computadores e banda larga. No entanto, recursos diretamente associados ao apoio pedagógico especializado, como biblioteca, laboratório de informática, laboratório de ciências e sala de leitura, apresentam percentuais menores. Esse resultado sugere que o acesso à conectividade e equipamentos é mais amplo do que a presença de espaços pedagógicos estruturados para leitura, experimentação científica e atividades educacionais específicas.
 
-![Figura 5 — Presença de infraestrutura pedagógica e tecnológica nas escolas de ensino médio regular](images/figura5.png)
+![Figura 5 — Presença de infraestrutura pedagógica e tecnológica nas escolas de ensino médio regular](imagens/figura5.png)
 
 *Figura 5 — Presença de infraestrutura pedagógica e tecnológica nas escolas de ensino médio regular. Percentual de escolas que possuem recursos pedagógicos e tecnológicos, como internet, computadores, banda larga, equipamentos multimídia, internet para alunos, biblioteca, laboratório de informática, laboratório de ciências e sala de leitura. Como as variáveis são binárias, os percentuais indicam a proporção de escolas em que cada recurso está presente.*
 
 A análise dos **espaços físicos escolares** (Figura 6) sugere que estruturas voltadas a atividades esportivas e convivência estão presentes em parte expressiva das instituições, especialmente quadras esportivas, pátios cobertos e quadras cobertas. No entanto, a menor presença de áreas verdes indica uma limitação em relação a espaços de contato com o ambiente natural e de convivência ao ar livre.
 
-![Figura 6 — Ambiente escolar e espaços físicos nas escolas de ensino médio regular](images/figura6.png)
+![Figura 6 — Ambiente escolar e espaços físicos nas escolas de ensino médio regular](imagens/figura6.png)
 
 *Figura 6 — Ambiente escolar e espaços físicos nas escolas de ensino médio regular. Percentual de escolas que possuem espaços físicos complementares, como quadra esportiva, pátio coberto, quadra coberta e área verde. Como as variáveis são binárias, os percentuais indicam a proporção de escolas em que cada estrutura está presente.*
 
 Quanto aos **recursos de acessibilidade** (Figura 7), observa-se uma diferença importante entre adaptações mais básicas e recursos mais específicos de inclusão. A presença de rampas em grande parte das escolas indica algum avanço na adaptação física dos espaços, mas os percentuais menores de pisos táteis, sinalização visual acessível e salas de atendimento especializado sugerem que a acessibilidade ainda tende a ser parcial. Além disso, a presença de escolas com acessibilidade inexistente evidencia que ainda há instituições sem recursos mínimos registrados nessa dimensão.
 
-![Figura 7 — Recursos de acessibilidade nas escolas de ensino médio regular](images/figura7.png)
+![Figura 7 — Recursos de acessibilidade nas escolas de ensino médio regular](imagens/figura7.png)
 
 *Figura 7 — Recursos de acessibilidade nas escolas de ensino médio regular. Percentual de escolas que possuem recursos de acessibilidade, como rampas, sala de atendimento especializado, pisos táteis e sinalização visual acessível.*
 
 A **comparação entre escolas urbanas e rurais** (Figura 8) evidencia desigualdades territoriais na distribuição de infraestrutura escolar. De modo geral, as escolas urbanas apresentam maior presença de recursos como esgotamento sanitário pela rede pública, quadra esportiva, quadra coberta, laboratórios, banheiro acessível, pátio coberto, biblioteca e sala de leitura. A alimentação escolar aparece como exceção, com maior presença nas escolas rurais, o que pode estar relacionado à importância desse serviço em contextos de maior vulnerabilidade territorial.
 
-![Figura 8 — Maiores diferenças de infraestrutura entre escolas urbanas e rurais](images/figura8.png)
+![Figura 8 — Maiores diferenças de infraestrutura entre escolas urbanas e rurais](imagens/figura8.png)
 
 *Figura 8 — Maiores diferenças de infraestrutura entre escolas urbanas e rurais. Comparação dos indicadores com maior diferença percentual entre escolas urbanas e rurais, considerando recursos de infraestrutura básica, pedagógica, tecnológica e de apoio escolar. As barras indicam a proporção de escolas que possuem cada recurso em cada localização.*
 
@@ -210,7 +210,7 @@ A **comparação entre escolas urbanas e rurais** (Figura 8) evidencia desiguald
 
 A presença de profissionais de apoio e gestão foi analisada a partir da verificação de escolas com pelo menos um profissional registrado em cada categoria. Para isso, as variáveis quantitativas foram convertidas em indicadores de presença ou ausência, considerando valor maior que zero como presença do profissional.
 
-![Figura 9 — Presença de profissionais de apoio e gestão nas escolas de ensino médio regular](images/figura9.png)
+![Figura 9 — Presença de profissionais de apoio e gestão nas escolas de ensino médio regular](imagens/figura9.png)
 
 *Figura 9 — Presença de profissionais de apoio e gestão nas escolas de ensino médio regular. Proporção de escolas que possuem ou não possuem ao menos um profissional em cada categoria analisada, incluindo coordenação, psicologia, assistência social, pedagogia, biblioteconomia e gestão escolar. A presença foi considerada quando a escola registrou quantidade maior que zero para o respectivo profissional.*
 
@@ -218,13 +218,13 @@ A análise da presença de profissionais indica que os cargos ligados à organiz
 
 Considerando que a evasão escolar é um fenômeno multifatorial, a ausência de profissionais de apoio não pode ser interpretada isoladamente como causa de evasão. No entanto, a baixa cobertura de psicólogos e assistentes sociais pode indicar menor capacidade institucional de acompanhamento de estudantes em situações de vulnerabilidade, especialmente em escolas com grande número de matrículas.
 
-![Figura 10 — Distribuição de alunos por profissional nas escolas que possuem cada categoria](images/figura10.png)
+![Figura 10 — Distribuição de alunos por profissional nas escolas que possuem cada categoria](imagens/figura10.png)
 
 *Figura 10 — Distribuição de alunos por profissional, considerando somente as escolas que possuem pelo menos um profissional daquela categoria. A linha laranja dentro de cada caixa é a mediana. Quanto mais alta a mediana, maior o número típico de alunos por profissional.*
 
 A comparação por localização mostra que as escolas urbanas apresentam maior presença de profissionais de apoio e gestão em praticamente todas as categorias analisadas (Figura 11). A diferença é especialmente visível em funções como coordenação, psicologia, biblioteconomia e gestão escolar, sugerindo que escolas urbanas tendem a contar com uma estrutura institucional mais ampla.
 
-![Figura 11 — Presença de profissionais por localização da escola](images/figura11.png)
+![Figura 11 — Presença de profissionais por localização da escola](imagens/figura11.png)
 
 *Figura 11 — Presença de profissionais por localização da escola. Percentual de escolas urbanas e rurais que possuem ao menos um profissional em cada categoria analisada, incluindo coordenação, psicologia, assistência social, pedagogia, biblioteconomia e gestão escolar.*
 
@@ -257,7 +257,7 @@ Além das variáveis originais do Censo, foram criadas variáveis compostas que 
 
 A Figura 12 apresenta a relação entre os scores de carência e a taxa média de abandono escolar. No caso da carência pedagógica, observa-se uma tendência geral de aumento da taxa média de abandono conforme cresce o acúmulo de carências, especialmente nos scores mais altos. Esses resultados sugerem que a associação entre carências institucionais e abandono escolar pode envolver padrões não lineares e efeitos de limiar.
 
-![Figura 12 — Relação entre scores de carência e taxa média de abandono](images/figura12.png)
+![Figura 12 — Relação entre scores de carência e taxa média de abandono](imagens/figura12.png)
 
 *Figura 12 — Relação entre scores de carência e taxa média de abandono. As barras indicam a taxa média de abandono em cada nível de carência, enquanto a linha laranja representa o número de escolas em cada grupo. A carência pedagógica apresenta tendência geral crescente em relação ao abandono médio, embora de forma não linear. A carência de apoio apresenta padrão menos regular, com maior oscilação entre os níveis do score. Esses resultados sugerem associação entre acúmulo de carências institucionais e abandono escolar, mas não permitem inferir causalidade.*
 
@@ -405,7 +405,7 @@ O threshold 0,50 foi selecionado automaticamente por maximizar o F1 do Alto risc
 
 *\*A média do grupo Sem abandono (2,94%) é levemente superior ao risco moderado (2,17%) por conta de um pequeno número de escolas com abandono real que escapam para esse grupo (threshold conservador da Etapa 1). A mediana de 0,0% confirma que a maioria do grupo genuinamente não tem abandono. A lógica do sistema é validada pela mediana: Sem abandono (0,0%) < Risco moderado (1,4%) < Alto risco (6,1%).*
 
-![Figura 13 — Matrizes de confusão do sistema de alerta](images/figura13.png)
+![Figura 13 — Matrizes de confusão do sistema de alerta](imagens/figura13.png)
 
 *Figura 13 — Matrizes de confusão do sistema de alerta. À esquerda: Árvore de Decisão. À direita: Random Forest. O RF acerta 700 de 1.004 escolas de alto risco real (69,7%), com apenas 65 escapando para Sem abandono — o erro mais grave do sistema. A Árvore acerta 638 (63,5%) mas comete 117 erros graves (Alto risco → Sem abandono).*
 
@@ -427,7 +427,7 @@ As regras principais identificadas pela Árvore de Decisão para a Etapa 2 (Alto
 
 **Random Forest — importância das variáveis**
 
-![Figura 14 — Top 15 features por importância Gini — Random Forest Etapa 2](images/figura14.png)
+![Figura 14 — Top 15 features por importância Gini — Random Forest Etapa 2](imagens/figura14.png)
 
 *Figura 14 — Top 15 features por importância Gini — Random Forest Etapa 2. Proporção de matrículas no noturno e total de matrículas dominam, seguidos por razões aluno/profissional, presença de grêmio e associação de pais e mestres.*
 
