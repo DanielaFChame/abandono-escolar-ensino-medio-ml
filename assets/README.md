@@ -5,5 +5,5 @@ Liste os artefatos produzidos, com suas localizaçãoes e descrição do conteú
 
 * `/data` - Pasta com os dados do projeto
 * `/models` - Pasta com os modelos já induzidos
-* `/results ` - Pasta com os resultados da análise exploratória de dados
+* `/docs ` - Arquivo report.md com os resultados da análise exploratória de dados e a aplicação dos modelos supervisionados
 
