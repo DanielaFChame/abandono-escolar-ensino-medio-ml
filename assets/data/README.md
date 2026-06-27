@@ -16,6 +16,7 @@ Os principais documentos a serem produzidos são:
 * `base_final.csv`
   * base final processada, limpa e selecionada
 	
-* As bases utilizadas para a base final ultrapassam os 25 MB e podem ser encontradas: https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
+
+As bases utilizadas para a base final ultrapassam os 25 MB e podem ser encontradas: https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
 
 As taxas de rendimento escolar do ano de 2024 podem ser encontradas por escola: https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar
