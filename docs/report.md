@@ -1,10 +1,10 @@
 # Análise de fatores institucionais e estruturais associados ao abandono escolar no Ensino Médio brasileiro: um estudo com dados do Censo Escolar 2025 e das Taxas de Rendimento Escolar 2024
 
-**Gabriela Gomes Mattoso**, gabriela.mattoso@sga.pucminas.br
-**Daniela Ferreira Chame**, daniela.chame@sga.pucminas.br
-**Giovanna Brito Silva Ribeiro**, gbsribeiro@sga.pucminas.br
-**Isabella Oliveira Araujo Barbosa Moreira**, isabella.moreira.1630865@sga.pucminas.br
-**Lívia Hilbert de Oliveira**, livia.hilbert@sga.pucminas.br
+* Gabriela Gomes Mattoso - gabriela.mattoso@sga.pucminas.br
+* Daniela Ferreira Chame - daniela.chame@sga.pucminas.br
+* Giovanna Brito Silva Ribeiro - gbsribeiro@sga.pucminas.br
+* Isabella Oliveira Araujo Barbosa Moreira - isabella.moreira.1630865@sga.pucminas.br
+* Lívia Hilbert de Oliveira - livia.hilbert@sga.pucminas.br
 
 **Professores:** Prof. Gabriel Barbosa da Fonseca e Prof. Marco Paulo Soares Gomes
 
